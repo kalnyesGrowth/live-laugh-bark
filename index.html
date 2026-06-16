@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Live Laugh Bark LLC | Professional Pet Grooming in Stafford, VA</title>
+<meta name="description" content="Live Laugh Bark LLC offers professional pet grooming in Stafford, VA. Natural & organic products, stress-free grooming for dogs and cats. 5-star rated. Call (540) 656-0183.">
+<meta property="og:title" content="Live Laugh Bark LLC | Pet Grooming Stafford VA">
+<meta property="og:description" content="Professional pet grooming with natural & organic products. Dogs and cats welcome. Tue-Sat 9AM-4PM.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=chillax@400,500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:hidden}
+:root{
+  --font-heading:'Chillax',sans-serif;
+  --font-body:'Satoshi',sans-serif;
+  --bg:#0f1114;
+  --bg-card:#1a1d23;
+  --bg-card-hover:#22262e;
+  --accent:#7EB8A2;
+  --accent-glow:rgba(126,184,162,.15);
+  --gold:#D4A853;
+  --text:#e8e6e1;
+  --text-muted:#8a8a8e;
+  --text-dim:#5a5a5e;
+  --radius:14px;
+  --text-xs:.694rem;
+  --text-sm:.833rem;
+  --text-base:1rem;
+  --text-lg:1.2rem;
+  --text-xl:1.44rem;
+  --text-2xl:1.728rem;
+  --text-3xl:2.074rem;
+  --text-4xl:2.488rem;
+  --text-5xl:2.986rem;
+}
+body{
+  font-family:var(--font-body);
+  font-size:var(--text-base);
+  line-height:1.7;
+  color:var(--text);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:var(--font-heading);line-height:1.15;font-weight:700}
+h1{font-size:var(--text-5xl)}
+h2{font-size:var(--text-4xl)}
+h3{font-size:var(--text-3xl)}
+h4{font-size:var(--text-2xl)}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--gold)}
+img{max-width:100%;display:block}
+.section-label{
+  font-family:var(--font-body);
+  font-size:var(--text-xs);
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:.75rem;
+}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+section{padding:100px 0}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:1000;
+  background:transparent;
+  transition:background .4s;
+  padding:18px 0;
+}
+nav.scrolled{background:rgba(15,17,20,.95)}
+.nav-inner{
+  max-width:1200px;margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{
+  font-family:var(--font-heading);
+  font-size:var(--text-xl);
+  font-weight:700;
+  color:var(--text);
+}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:32px;list-style:none;align-items:center}
+.nav-links a{color:var(--text-muted);font-size:var(--text-sm);font-weight:500;transition:color .3s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{
+  border:1px solid var(--accent);
+  color:var(--accent);
+  padding:10px 24px;
+  border-radius:50px;
+  font-size:var(--text-sm);
+  font-weight:600;
+  transition:all .3s;
+}
+.nav-cta:hover{background:var(--accent);color:var(--bg)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px}
+.hamburger span{width:24px;height:2px;background:var(--text);transition:all .3s;display:block}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* ─── HERO ─── */
+#hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;
+  overflow:hidden;
+}
+#hero-canvas{
+  position:absolute;top:0;left:0;width:100%;height:100%;
+  object-fit:cover;z-index:0;
+}
+.hero-overlay{
+  position:absolute;top:0;left:0;width:100%;height:100%;
+  background:linear-gradient(180deg,rgba(15,17,20,.55) 0%,rgba(15,17,20,.75) 100%);
+  z-index:1;
+}
+.hero-content{position:relative;z-index:2;max-width:700px;padding:0 24px}
+.hero-badge{
+  display:inline-block;
+  background:rgba(126,184,162,.15);
+  color:var(--accent);
+  padding:8px 20px;
+  border-radius:50px;
+  font-size:var(--text-sm);
+  font-weight:600;
+  margin-bottom:24px;
+}
+.hero-content h1{margin-bottom:20px;color:#fff}
+.hero-content p{
+  font-size:var(--text-lg);
+  color:rgba(255,255,255,.75);
+  margin-bottom:36px;
+  max-width:550px;
+  margin-left:auto;margin-right:auto;
+}
+.hero-cta{
+  display:inline-block;
+  border:2px solid rgba(255,255,255,.6);
+  color:#fff;
+  padding:16px 40px;
+  border-radius:50px;
+  font-size:var(--text-base);
+  font-weight:600;
+  font-family:var(--font-heading);
+  letter-spacing:.03em;
+  transition:all .3s;
+}
+.hero-cta:hover{background:rgba(255,255,255,.12);border-color:#fff;color:#fff}
+
+/* ─── ABOUT ─── */
+#about{background:var(--bg)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-img{
+  border-radius:var(--radius);
+  overflow:hidden;
+  aspect-ratio:4/3;
+}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.about-text h2{margin-bottom:20px}
+.about-text p{color:var(--text-muted);margin-bottom:16px}
+.about-highlights{display:flex;gap:24px;margin-top:28px;flex-wrap:wrap}
+.about-highlight{
+  background:var(--accent-glow);
+  border-radius:12px;
+  padding:16px 20px;
+  flex:1;min-width:140px;
+}
+.about-highlight strong{display:block;color:var(--accent);font-family:var(--font-heading);font-size:var(--text-lg)}
+.about-highlight span{font-size:var(--text-sm);color:var(--text-muted)}
+
+/* ─── SERVICES ─── */
+#services{background:var(--bg-card)}
+.services-header{text-align:center;max-width:600px;margin:0 auto 60px}
+.services-header p{color:var(--text-muted);margin-top:12px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-card{
+  background:var(--bg);
+  border-radius:var(--radius);
+  overflow:hidden;
+  transition:transform .3s,box-shadow .3s;
+}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.service-card-img{
+  height:220px;
+  overflow:hidden;
+}
+.service-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.service-card:hover .service-card-img img{transform:scale(1.05)}
+.service-card-body{padding:24px}
+.service-card-body h4{font-size:var(--text-xl);margin-bottom:8px}
+.service-card-body p{color:var(--text-muted);font-size:var(--text-sm);line-height:1.6}
+
+/* ─── WHY CHOOSE ─── */
+#why{
+  position:relative;
+  background-image:url('https://images.pexels.com/photos/19145874/pexels-photo-19145874.jpeg?auto=compress&cs=tinysrgb&w=1920');
+  background-size:cover;background-position:center;background-attachment:fixed;
+}
+#why::before{
+  content:'';position:absolute;inset:0;
+  background:rgba(15,17,20,.88);
+}
+#why .container{position:relative;z-index:1}
+.why-header{text-align:center;max-width:600px;margin:0 auto 60px}
+.why-header p{color:var(--text-muted);margin-top:12px}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.why-card{
+  background:rgba(26,29,35,.7);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(126,184,162,.1);
+  border-radius:var(--radius);
+  padding:36px 28px;
+  text-align:center;
+  transition:border-color .3s;
+}
+.why-card:hover{border-color:rgba(126,184,162,.3)}
+.why-icon{
+  width:56px;height:56px;
+  background:var(--accent-glow);
+  border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 20px;
+}
+.why-icon svg{width:28px;height:28px;stroke:var(--accent);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.why-card h4{font-size:var(--text-xl);margin-bottom:10px}
+.why-card p{color:var(--text-muted);font-size:var(--text-sm)}
+
+/* ─── REVIEWS ─── */
+#reviews{background:var(--bg)}
+.reviews-header{text-align:center;max-width:600px;margin:0 auto 60px}
+.reviews-header p{color:var(--text-muted);margin-top:12px}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.review-card{
+  background:var(--bg-card);
+  border-radius:var(--radius);
+  padding:32px;
+  position:relative;
+  transition:transform .3s;
+}
+.review-card:hover{transform:translateY(-4px)}
+.review-stars{color:var(--gold);font-size:var(--text-lg);margin-bottom:16px;letter-spacing:2px}
+.review-card p{color:var(--text-muted);font-size:var(--text-sm);line-height:1.7;font-style:italic;margin-bottom:20px}
+.review-author{display:flex;align-items:center;gap:12px}
+.review-avatar{
+  width:42px;height:42px;
+  border-radius:50%;
+  background:var(--accent-glow);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--accent);
+  font-family:var(--font-heading);
+  font-weight:700;
+  font-size:var(--text-base);
+}
+.review-author-info strong{display:block;font-size:var(--text-sm);color:var(--text)}
+.review-author-info span{font-size:var(--text-xs);color:var(--text-dim)}
+.review-cta{
+  text-align:center;margin-top:48px;
+  padding:32px;
+  background:var(--bg-card);
+  border-radius:var(--radius);
+}
+.review-cta p{color:var(--text-muted);margin-bottom:16px}
+.review-cta a{
+  display:inline-block;
+  background:var(--accent);
+  color:var(--bg);
+  padding:14px 32px;
+  border-radius:50px;
+  font-weight:700;
+  font-family:var(--font-heading);
+  transition:background .3s;
+}
+.review-cta a:hover{background:var(--gold);color:var(--bg)}
+
+/* ─── PROCESS ─── */
+#process{background:var(--bg-card)}
+.process-header{text-align:center;max-width:600px;margin:0 auto 60px}
+.process-header p{color:var(--text-muted);margin-top:12px}
+.timeline{max-width:700px;margin:0 auto;position:relative}
+.timeline::before{
+  content:'';
+  position:absolute;
+  left:28px;top:0;bottom:0;
+  width:2px;
+  background:var(--text-dim);
+  transform-origin:top;
+  transform:scaleY(0);
+  transition:transform 1.2s ease-out;
+}
+.timeline.animated::before{transform:scaleY(1)}
+.timeline-step{
+  display:flex;gap:32px;
+  margin-bottom:48px;
+  opacity:0;transform:translateY(30px);
+  transition:all .6s ease-out;
+}
+.timeline-step.visible{opacity:1;transform:translateY(0)}
+.timeline-dot{
+  width:56px;height:56px;min-width:56px;
+  border-radius:50%;
+  background:var(--bg);
+  border:2px solid var(--accent);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--accent);
+  font-family:var(--font-heading);
+  font-weight:700;
+  font-size:var(--text-lg);
+  z-index:1;
+}
+.timeline-content h4{font-size:var(--text-xl);margin-bottom:6px}
+.timeline-content p{color:var(--text-muted);font-size:var(--text-sm)}
+
+/* ─── FAQ ─── */
+#faq{background:var(--bg)}
+.faq-header{text-align:center;max-width:600px;margin:0 auto 60px}
+.faq-header p{color:var(--text-muted);margin-top:12px}
+.faq-list{max-width:740px;margin:0 auto}
+.faq-item{
+  border-bottom:1px solid rgba(138,138,142,.15);
+  padding:24px 0;
+}
+.faq-q{
+  display:flex;align-items:center;justify-content:space-between;
+  cursor:pointer;
+  font-family:var(--font-heading);
+  font-weight:600;
+  font-size:var(--text-lg);
+  color:var(--text);
+  background:none;border:none;width:100%;text-align:left;
+}
+.faq-q::after{
+  content:'+';
+  font-size:var(--text-2xl);
+  color:var(--accent);
+  transition:transform .3s;
+  min-width:28px;text-align:center;
+}
+.faq-item.open .faq-q::after{content:'\2212'}
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height .4s ease-out,padding .4s;
+  color:var(--text-muted);
+  font-size:var(--text-sm);
+  line-height:1.7;
+}
+.faq-item.open .faq-a{max-height:300px;padding-top:16px}
+
+/* ─── CONTACT ─── */
+#contact{
+  position:relative;
+  background-image:url('https://images.pexels.com/photos/6131580/pexels-photo-6131580.jpeg?auto=compress&cs=tinysrgb&w=1920');
+  background-size:cover;background-position:center;
+}
+#contact::before{
+  content:'';position:absolute;inset:0;
+  background:rgba(15,17,20,.9);
+}
+#contact .container{position:relative;z-index:1}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.contact-info h2{margin-bottom:20px}
+.contact-info>p{color:var(--text-muted);margin-bottom:32px}
+.contact-detail{display:flex;gap:16px;margin-bottom:24px;align-items:start}
+.contact-icon{
+  width:44px;height:44px;min-width:44px;
+  background:var(--accent-glow);
+  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+}
+.contact-icon svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.contact-detail strong{display:block;font-size:var(--text-sm);color:var(--text);margin-bottom:2px}
+.contact-detail span{font-size:var(--text-sm);color:var(--text-muted)}
+.contact-map{
+  border-radius:var(--radius);
+  overflow:hidden;
+  height:100%;min-height:380px;
+}
+.contact-map iframe{width:100%;height:100%;border:0;filter:brightness(.8) contrast(1.1) saturate(.5)}
+
+/* ─── FOOTER ─── */
+footer{
+  background:var(--bg-card);
+  padding:48px 0 32px;
+  border-top:1px solid rgba(138,138,142,.1);
+}
+.footer-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:20px;
+}
+.footer-brand{font-family:var(--font-heading);font-weight:700;font-size:var(--text-lg);color:var(--text)}
+.footer-brand span{color:var(--accent)}
+.footer-links{display:flex;gap:24px;list-style:none}
+.footer-links a{color:var(--text-muted);font-size:var(--text-sm);transition:color .3s}
+.footer-links a:hover{color:var(--accent)}
+.footer-social{display:flex;gap:16px}
+.footer-social a{
+  width:40px;height:40px;
+  border-radius:10px;
+  background:var(--bg);
+  display:flex;align-items:center;justify-content:center;
+  transition:background .3s;
+}
+.footer-social a:hover{background:var(--accent-glow)}
+.footer-social svg{width:18px;height:18px;fill:var(--text-muted)}
+.footer-bottom{
+  text-align:center;margin-top:32px;padding-top:24px;
+  border-top:1px solid rgba(138,138,142,.08);
+  color:var(--text-dim);font-size:var(--text-xs);
+}
+
+/* ─── MOBILE MENU ─── */
+.mobile-menu{
+  display:none;
+  position:fixed;top:0;left:0;width:100%;height:100vh;
+  background:rgba(15,17,20,.97);
+  z-index:999;
+  flex-direction:column;align-items:center;justify-content:center;gap:32px;
+}
+.mobile-menu.open{display:flex}
+.mobile-menu a{
+  font-family:var(--font-heading);
+  font-size:var(--text-2xl);
+  color:var(--text);
+  font-weight:600;
+}
+.mobile-menu a:hover{color:var(--accent)}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:1024px){
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .reviews-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  h1{font-size:var(--text-3xl)}
+  h2{font-size:var(--text-2xl)}
+  h3{font-size:var(--text-xl)}
+  body{font-size:15px}
+  section{padding:70px 0}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .about-grid{grid-template-columns:1fr;gap:36px}
+  .services-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .contact-map{min-height:280px}
+  .hero-cta{padding:14px 32px;font-size:var(--text-sm)}
+  .footer-inner{flex-direction:column;text-align:center}
+  .footer-links{flex-wrap:wrap;justify-content:center}
+  #why{background-attachment:scroll}
+  .about-highlights{flex-direction:column}
+}
+
+/* ─── ANIMATIONS ─── */
+.fade-in{opacity:0;transform:translateY(30px);transition:all .7s ease-out}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+</style>
+
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"PetGrooming",
+  "name":"Live Laugh Bark LLC",
+  "image":"https://images.pexels.com/photos/19145882/pexels-photo-19145882.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"395 Garrisonville Rd #104",
+    "addressLocality":"Stafford",
+    "addressRegion":"VA",
+    "postalCode":"22554",
+    "addressCountry":"US"
+  },
+  "telephone":"(540) 656-0183",
+  "openingHoursSpecification":[
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"16:00"}
+  ],
+  "aggregateRating":{
+    "@type":"AggregateRating",
+    "ratingValue":"5.0",
+    "reviewCount":"24"
+  },
+  "url":"https://www.facebook.com/livelaughbark/"
+}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Live Laugh <span>Bark</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#process">How It Works</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="tel:5406560183" class="nav-cta">Call Now</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#reviews" onclick="closeMenu()">Reviews</a>
+  <a href="#process" onclick="closeMenu()">How It Works</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="tel:5406560183" onclick="closeMenu()">Call (540) 656-0183</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">5-Star Rated Pet Grooming in Stafford, VA</div>
+    <h1>Live Laugh Bark</h1>
+    <p>Natural, organic grooming at your pet's pace. Dogs and cats welcome. Walk-ins available Tuesday through Saturday.</p>
+    <a href="tel:5406560183" class="hero-cta">Book Your Appointment</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img fade-in">
+        <img src="https://images.pexels.com/photos/6131147/pexels-photo-6131147.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Gentle pet grooming session" width="800" height="600" loading="lazy">
+      </div>
+      <div class="about-text fade-in">
+        <div class="section-label">About Us</div>
+        <h2>Grooming at Your Pet's Pace</h2>
+        <p>At Live Laugh Bark, we believe every pet deserves a stress-free grooming experience. Our team takes the time to understand your pet's temperament and works at their comfort level, so they leave feeling relaxed and looking their best.</p>
+        <p>We use only natural and organic products because your pet's sensitive skin matters. No harsh chemicals, no shortcuts. Just gentle, professional care for dogs and cats of all breeds and sizes.</p>
+        <div class="about-highlights">
+          <div class="about-highlight">
+            <strong>Natural Products</strong>
+            <span>Organic, non-toxic</span>
+          </div>
+          <div class="about-highlight">
+            <strong>Dogs & Cats</strong>
+            <span>All breeds welcome</span>
+          </div>
+          <div class="about-highlight">
+            <strong>Walk-Ins</strong>
+            <span>Always welcome</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="services-header fade-in">
+      <div class="section-label">Our Services</div>
+      <h2>Complete Pet Spa Experience</h2>
+      <p>From a quick nail trim to a full spa day, we offer everything your pet needs to look and feel their best.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-in">
+        <div class="service-card-img">
+          <img src="https://images.pexels.com/photos/19145882/pexels-photo-19145882.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dog receiving a bath" width="600" height="400" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <h4>Bath & Brush</h4>
+          <p>A thorough wash with natural shampoo, blow dry, brush out, ear cleaning, and nail trim. Perfect for a quick refresh.</p>
+        </div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-card-img">
+          <img src="https://images.pexels.com/photos/12283472/pexels-photo-12283472.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dog getting a professional haircut" width="600" height="400" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <h4>Full Groom</h4>
+          <p>Our complete package includes bath, haircut styled to your preference, ear cleaning, nail trim, and paw pad treatment.</p>
+        </div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-card-img">
+          <img src="https://images.pexels.com/photos/6816850/pexels-photo-6816850.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dog being combed during deshedding" width="600" height="400" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <h4>Furminator De-shed</h4>
+          <p>Specialized de-shedding treatment that removes loose undercoat and reduces shedding by up to 90%. Your furniture will thank you.</p>
+        </div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-card-img">
+          <img src="https://images.pexels.com/photos/19145894/pexels-photo-19145894.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Professional groomer trimming nails" width="600" height="400" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <h4>Walk-In Nails</h4>
+          <p>No appointment needed. Quick and careful nail trimming with optional nail color for the stylish pup. In and out in minutes.</p>
+        </div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-card-img">
+          <img src="https://images.pexels.com/photos/19145884/pexels-photo-19145884.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Creative grooming with hair color" width="600" height="400" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <h4>Creative Color</h4>
+          <p>Safe, pet-friendly hair color to give your fur baby a unique look. From subtle highlights to bold statements, we bring the fun.</p>
+        </div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-card-img">
+          <img src="https://images.pexels.com/photos/6131159/pexels-photo-6131159.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Groomer caring for pet" width="600" height="400" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <h4>Bath & Tidy</h4>
+          <p>Light trim around the face, paws, and sanitary areas paired with a refreshing bath. Great for in-between full grooms.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="why">
+  <div class="container">
+    <div class="why-header fade-in">
+      <div class="section-label">Why Live Laugh Bark</div>
+      <h2>What Makes Us Different</h2>
+      <p>Your pet's comfort and safety come first, always.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card fade-in">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </div>
+        <h4>Stress-Free Grooming</h4>
+        <p>We groom at your pet's pace. No rushing, no forcing. Every session is tailored to keep your pet calm and comfortable.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M7 17.5c0 1.38-1.12 2.5-2.5 2.5S2 18.88 2 17.5 3.12 15 4.5 15 7 16.12 7 17.5zM22 17.5c0 1.38-1.12 2.5-2.5 2.5S17 18.88 17 17.5s1.12-2.5 2.5-2.5S22 16.12 22 17.5z"/><path d="M12 4c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/><path d="M15.78 11.68A6.95 6.95 0 0012 10.5c-1.42 0-2.73.43-3.78 1.18"/></svg>
+        </div>
+        <h4>Natural & Organic</h4>
+        <p>Only non-toxic, organic products touch your pet's skin. We understand that sensitive skin needs gentle, chemical-free care.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <h4>5-Star Experience</h4>
+        <p>With 24 five-star reviews and counting, our clients keep coming back. Their dogs drag them in the door, that's how much they love it here.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="container">
+    <div class="reviews-header fade-in">
+      <div class="section-label">Client Reviews</div>
+      <h2>What Pet Parents Say</h2>
+      <p>Real reviews from real customers who trust us with their fur babies.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card fade-in">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"I was very pleased by the outcome. The owners here are very friendly and I could tell my fur-babies were happy and not at all stressed with their experience."</p>
+        <div class="review-author">
+          <div class="review-avatar">JT</div>
+          <div class="review-author-info">
+            <strong>Jeremy T.</strong>
+            <span>Yelp Review</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card fade-in">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"The absolute best in Stafford. One of the owners, Shayna, has been doing our dog for years and we couldn't be happier with the results."</p>
+        <div class="review-author">
+          <div class="review-avatar">JM</div>
+          <div class="review-author-info">
+            <strong>John M.</strong>
+            <span>Yelp Review</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card fade-in">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"I take all 4 of mine to Live Laugh Bark and they love it. Anywhere else I had to drag my dogs in, at LLB, they are dragging me in!"</p>
+        <div class="review-author">
+          <div class="review-avatar">KC</div>
+          <div class="review-author-info">
+            <strong>Kathy C.</strong>
+            <span>Google Review</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card fade-in">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"The women that work here are super sweet and do an amazing job. I am always happy to go here and bring my dog."</p>
+        <div class="review-author">
+          <div class="review-avatar">BB</div>
+          <div class="review-author-info">
+            <strong>Brenda B.</strong>
+            <span>Yelp Review</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card fade-in">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Great service, wonderful staff. Did a great cut on my dog JoJo. Very responsive and great customer service."</p>
+        <div class="review-author">
+          <div class="review-avatar">JJ</div>
+          <div class="review-author-info">
+            <strong>James J.</strong>
+            <span>Yelp Review</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card fade-in">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"If you are looking for a full service pet salon, look no further. Tierney did such a wonderful job with my baby."</p>
+        <div class="review-author">
+          <div class="review-avatar">NS</div>
+          <div class="review-author-info">
+            <strong>Natalie S.</strong>
+            <span>Yelp Review</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="review-cta fade-in">
+      <p>Love your experience? Leave us a review and get 10% off your next visit!</p>
+      <a href="https://g.page/r/CQ_kn5w8kaP7EBM/review" target="_blank" rel="noopener">Leave a Google Review</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <div class="process-header fade-in">
+      <div class="section-label">How It Works</div>
+      <h2>Your Visit, Step by Step</h2>
+      <p>We keep things simple so you and your pet can relax.</p>
+    </div>
+    <div class="timeline" id="timeline">
+      <div class="timeline-step">
+        <div class="timeline-dot">1</div>
+        <div class="timeline-content">
+          <h4>Call or Walk In</h4>
+          <p>Give us a call at (540) 656-0183 or text to schedule. Walk-ins are always welcome for nail trims and quick services.</p>
+        </div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-dot">2</div>
+        <div class="timeline-content">
+          <h4>Meet & Greet</h4>
+          <p>We take a moment to meet your pet, discuss their needs, and understand any sensitivities or preferences before we begin.</p>
+        </div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-dot">3</div>
+        <div class="timeline-content">
+          <h4>The Spa Experience</h4>
+          <p>Your pet enjoys a gentle, stress-free grooming session with organic products. We work at their pace, never rushing.</p>
+        </div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-dot">4</div>
+        <div class="timeline-content">
+          <h4>Happy Pickup</h4>
+          <p>Pick up your freshly groomed, happy pet. We will walk you through what we did and any recommendations for at-home care.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-header fade-in">
+      <div class="section-label">FAQ</div>
+      <h2>Common Questions</h2>
+      <p>Everything you need to know before your visit.</p>
+    </div>
+    <div class="faq-list fade-in">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you groom cats too?</button>
+        <div class="faq-a">Yes! We welcome both dogs and cats of all breeds and sizes. Our gentle approach works especially well with cats who may be nervous about grooming.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do I need an appointment?</button>
+        <div class="faq-a">Walk-ins are welcome for nail trims and quick services. For full grooms and baths, we recommend calling or texting (540) 656-0183 to schedule. This ensures we can give your pet the unhurried attention they deserve.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What products do you use?</button>
+        <div class="faq-a">We exclusively use natural and organic grooming products that are gentle on your pet's skin. No harsh chemicals, sulfates, or artificial fragrances. This is especially important for pets with sensitive skin or allergies.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How long does a full groom take?</button>
+        <div class="faq-a">A full groom typically takes 1.5 to 3 hours depending on your pet's size, coat condition, and temperament. We never rush. Your pet's comfort determines our pace.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Is the hair color safe for pets?</button>
+        <div class="faq-a">Absolutely. We use pet-safe, non-toxic color products specifically formulated for animal fur. The dyes are free of harsh chemicals and are completely safe if licked or ingested in small amounts.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What are your hours?</button>
+        <div class="faq-a">We are open Tuesday through Saturday, 9:00 AM to 4:00 PM. We are closed on Sundays and Mondays. Last appointments are typically scheduled by 2:00 PM to ensure every pet gets our full attention.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info fade-in">
+        <div class="section-label">Get In Touch</div>
+        <h2>Visit Our Salon</h2>
+        <p>We would love to meet your fur baby. Stop by, give us a call, or send a text to schedule your pet's spa day.</p>
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <strong>Address</strong>
+            <span>395 Garrisonville Rd #104, Stafford, VA 22554</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <strong>Phone</strong>
+            <span><a href="tel:5406560183">(540) 656-0183</a></span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div>
+            <strong>Hours</strong>
+            <span>Tuesday - Saturday: 9:00 AM - 4:00 PM<br>Sunday & Monday: Closed</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-map fade-in">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3121.8!2d-77.4287051!3d38.4745704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b6ef7aafd9c203%3A0xfb68913c9df40952!2sLive%20Laugh%20Bark%20LLC!5e0!3m2!1sen!1sus!4v1718576000000!5m2!1sen!1sus" width="600" height="450" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Live Laugh Bark LLC location map"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">Live Laugh <span>Bark</span></div>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/livelaughbark/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/livelaughbarkblog/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Live Laugh Bark LLC. All rights reserved. | 395 Garrisonville Rd #104, Stafford, VA 22554
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ─── CANVAS VIDEO RENDERER ─── */
+(function(){
+  const canvas = document.getElementById('hero-canvas');
+  const ctx = canvas.getContext('2d');
+  const video = document.createElement('video');
+  video.muted = true;
+  video.loop = true;
+  video.playsInline = true;
+  video.crossOrigin = 'anonymous';
+  video.setAttribute('playsinline','');
+  video.setAttribute('webkit-playsinline','');
+
+  const sources = [
+    'https://videos.pexels.com/video-files/6816883/6816883-hd_1920_1080_30fps.mp4',
+    'https://videos.pexels.com/video-files/6131723/6131723-hd_1920_1080_25fps.mp4',
+    'https://videos.pexels.com/video-files/6132700/6132700-hd_1920_1080_25fps.mp4'
+  ];
+  let srcIndex = 0;
+
+  function trySource(){
+    if(srcIndex >= sources.length){
+      canvas.style.background = 'url(https://images.pexels.com/photos/6816850/pexels-photo-6816850.jpeg?auto=compress&cs=tinysrgb&w=1920) center/cover';
+      return;
+    }
+    video.src = sources[srcIndex];
+    video.load();
+    video.play().catch(function(){
+      srcIndex++;
+      trySource();
+    });
+  }
+
+  function resizeCanvas(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  function drawFrame(){
+    if(video.readyState >= 2){
+      const vw = video.videoWidth, vh = video.videoHeight;
+      const cw = canvas.width, ch = canvas.height;
+      const scale = Math.max(cw/vw, ch/vh);
+      const sw = vw * scale, sh = vh * scale;
+      ctx.drawImage(video, (cw-sw)/2, (ch-sh)/2, sw, sh);
+    }
+    requestAnimationFrame(drawFrame);
+  }
+
+  video.addEventListener('error', function(){
+    srcIndex++;
+    trySource();
+  });
+
+  video.addEventListener('canplay', function(){
+    video.play().catch(function(){});
+  });
+
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+  drawFrame();
+  trySource();
+})();
+
+/* ─── NAV SCROLL ─── */
+window.addEventListener('scroll', function(){
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+/* ─── MOBILE MENU ─── */
+function toggleMenu(){
+  document.querySelector('.hamburger').classList.toggle('active');
+  document.getElementById('mobileMenu').classList.toggle('open');
+  document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
+}
+function closeMenu(){
+  document.querySelector('.hamburger').classList.remove('active');
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* ─── FAQ TOGGLE ─── */
+function toggleFaq(btn){
+  var item = btn.parentElement;
+  var wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(el){el.classList.remove('open')});
+  if(!wasOpen) item.classList.add('open');
+}
+
+/* ─── SCROLL ANIMATIONS ─── */
+var observer = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+}, {threshold:0.15});
+
+document.querySelectorAll('.fade-in, .timeline-step').forEach(function(el){
+  observer.observe(el);
+});
+
+/* ─── TIMELINE ANIMATION ─── */
+var timelineObs = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){
+      entry.target.classList.add('animated');
+    }
+  });
+}, {threshold:0.2});
+
+var timeline = document.getElementById('timeline');
+if(timeline) timelineObs.observe(timeline);
+
+/* ─── SMOOTH SCROLL ─── */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var target = document.querySelector(this.getAttribute('href'));
+    if(target){
+      e.preventDefault();
+      target.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  });
+});
+</script>
+
+</body>
+</html>
