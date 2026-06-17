@@ -8,6 +8,7 @@
 <meta property="og:title" content="Live Laugh Bark LLC | Pet Grooming Stafford VA">
 <meta property="og:description" content="Professional pet grooming with natural & organic products. Dogs and cats welcome. Tue-Sat 9AM-4PM.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://images.pexels.com/photos/19145882/pexels-photo-19145882.jpeg?auto=compress&cs=tinysrgb&w=1200">
 <link rel="preconnect" href="https://api.fontshare.com">
 <link href="https://api.fontshare.com/v2/css?f[]=chillax@400,500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
 <style>
@@ -194,7 +195,7 @@ nav.scrolled{background:rgba(15,17,20,.95)}
 .service-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
 .service-card:hover .service-card-img img{transform:scale(1.05)}
 .service-card-body{padding:24px}
-.service-card-body h4{font-size:var(--text-xl);margin-bottom:8px}
+.service-card-body h3{font-size:var(--text-xl);margin-bottom:8px;line-height:1.2}
 .service-card-body p{color:var(--text-muted);font-size:var(--text-sm);line-height:1.6}
 
 /* ─── WHY CHOOSE ─── */
@@ -228,8 +229,8 @@ nav.scrolled{background:rgba(15,17,20,.95)}
   display:flex;align-items:center;justify-content:center;
   margin:0 auto 20px;
 }
-.why-icon svg{width:28px;height:28px;stroke:var(--accent);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.why-card h4{font-size:var(--text-xl);margin-bottom:10px}
+.why-icon svg{width:28px;height:28px;stroke:var(--accent);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.why-card h3{font-size:var(--text-xl);margin-bottom:10px;line-height:1.2}
 .why-card p{color:var(--text-muted);font-size:var(--text-sm)}
 
 /* ─── REVIEWS ─── */
@@ -314,7 +315,7 @@ nav.scrolled{background:rgba(15,17,20,.95)}
   font-size:var(--text-lg);
   z-index:1;
 }
-.timeline-content h4{font-size:var(--text-xl);margin-bottom:6px}
+.timeline-content h3{font-size:var(--text-xl);margin-bottom:6px;line-height:1.2}
 .timeline-content p{color:var(--text-muted);font-size:var(--text-sm)}
 
 /* ─── FAQ ─── */
@@ -436,6 +437,8 @@ footer{
   .services-grid{grid-template-columns:repeat(2,1fr)}
   .why-grid{grid-template-columns:repeat(2,1fr)}
   .reviews-grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid{grid-template-columns:1fr;gap:36px}
+  #why{background-attachment:scroll}
 }
 @media(max-width:768px){
   h1{font-size:var(--text-3xl)}
@@ -467,7 +470,7 @@ footer{
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"PetGrooming",
+  "@type":"LocalBusiness",
   "name":"Live Laugh Bark LLC",
   "image":"https://images.pexels.com/photos/19145882/pexels-photo-19145882.jpeg?auto=compress&cs=tinysrgb&w=1200",
   "address":{
@@ -487,7 +490,8 @@ footer{
     "ratingValue":"5.0",
     "reviewCount":"24"
   },
-  "url":"https://www.facebook.com/livelaughbark/"
+  "url":"https://kalnyesgrowth.github.io/live-laugh-bark/",
+  "sameAs":["https://www.facebook.com/livelaughbark/","https://www.instagram.com/livelaughbarkblog/"]
 }
 </script>
 </head>
@@ -505,7 +509,7 @@ footer{
       <li><a href="#faq">FAQ</a></li>
       <li><a href="tel:5406560183" class="nav-cta">Call Now</a></li>
     </ul>
-    <button class="hamburger" aria-label="Menu" onclick="toggleMenu()">
+    <button class="hamburger" aria-label="Menu" aria-expanded="false" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -521,9 +525,10 @@ footer{
   <a href="tel:5406560183" onclick="closeMenu()">Call (540) 656-0183</a>
 </div>
 
+<main>
 <!-- HERO -->
 <section id="hero">
-  <canvas id="hero-canvas"></canvas>
+  <canvas id="hero-canvas" role="img" aria-label="Dog being groomed at Live Laugh Bark salon"></canvas>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-badge">5-Star Rated Pet Grooming in Stafford, VA</div>
@@ -538,7 +543,7 @@ footer{
   <div class="container">
     <div class="about-grid">
       <div class="about-img fade-in">
-        <img src="https://images.pexels.com/photos/6131147/pexels-photo-6131147.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Gentle pet grooming session" width="800" height="600" loading="lazy">
+        <img src="https://images.pexels.com/photos/6131147/pexels-photo-6131147.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Gentle pet grooming session" width="800" height="600" loading="eager">
       </div>
       <div class="about-text fade-in">
         <div class="section-label">About Us</div>
@@ -578,7 +583,7 @@ footer{
           <img src="https://images.pexels.com/photos/19145882/pexels-photo-19145882.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dog receiving a bath" width="600" height="400" loading="lazy">
         </div>
         <div class="service-card-body">
-          <h4>Bath & Brush</h4>
+          <h3>Bath & Brush</h3>
           <p>A thorough wash with natural shampoo, blow dry, brush out, ear cleaning, and nail trim. Perfect for a quick refresh.</p>
         </div>
       </div>
@@ -587,7 +592,7 @@ footer{
           <img src="https://images.pexels.com/photos/12283472/pexels-photo-12283472.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dog getting a professional haircut" width="600" height="400" loading="lazy">
         </div>
         <div class="service-card-body">
-          <h4>Full Groom</h4>
+          <h3>Full Groom</h3>
           <p>Our complete package includes bath, haircut styled to your preference, ear cleaning, nail trim, and paw pad treatment.</p>
         </div>
       </div>
@@ -596,7 +601,7 @@ footer{
           <img src="https://images.pexels.com/photos/6816850/pexels-photo-6816850.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dog being combed during deshedding" width="600" height="400" loading="lazy">
         </div>
         <div class="service-card-body">
-          <h4>Furminator De-shed</h4>
+          <h3>Furminator De-shed</h3>
           <p>Specialized de-shedding treatment that removes loose undercoat and reduces shedding by up to 90%. Your furniture will thank you.</p>
         </div>
       </div>
@@ -605,7 +610,7 @@ footer{
           <img src="https://images.pexels.com/photos/19145894/pexels-photo-19145894.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Professional groomer trimming nails" width="600" height="400" loading="lazy">
         </div>
         <div class="service-card-body">
-          <h4>Walk-In Nails</h4>
+          <h3>Walk-In Nails</h3>
           <p>No appointment needed. Quick and careful nail trimming with optional nail color for the stylish pup. In and out in minutes.</p>
         </div>
       </div>
@@ -614,7 +619,7 @@ footer{
           <img src="https://images.pexels.com/photos/19145884/pexels-photo-19145884.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Creative grooming with hair color" width="600" height="400" loading="lazy">
         </div>
         <div class="service-card-body">
-          <h4>Creative Color</h4>
+          <h3>Creative Color</h3>
           <p>Safe, pet-friendly hair color to give your fur baby a unique look. From subtle highlights to bold statements, we bring the fun.</p>
         </div>
       </div>
@@ -623,7 +628,7 @@ footer{
           <img src="https://images.pexels.com/photos/6131159/pexels-photo-6131159.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Groomer caring for pet" width="600" height="400" loading="lazy">
         </div>
         <div class="service-card-body">
-          <h4>Bath & Tidy</h4>
+          <h3>Bath & Tidy</h3>
           <p>Light trim around the face, paws, and sanitary areas paired with a refreshing bath. Great for in-between full grooms.</p>
         </div>
       </div>
@@ -642,23 +647,23 @@ footer{
     <div class="why-grid">
       <div class="why-card fade-in">
         <div class="why-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
         </div>
-        <h4>Stress-Free Grooming</h4>
+        <h3>Stress-Free Grooming</h3>
         <p>We groom at your pet's pace. No rushing, no forcing. Every session is tailored to keep your pet calm and comfortable.</p>
       </div>
       <div class="why-card fade-in">
         <div class="why-icon">
-          <svg viewBox="0 0 24 24"><path d="M7 17.5c0 1.38-1.12 2.5-2.5 2.5S2 18.88 2 17.5 3.12 15 4.5 15 7 16.12 7 17.5zM22 17.5c0 1.38-1.12 2.5-2.5 2.5S17 18.88 17 17.5s1.12-2.5 2.5-2.5S22 16.12 22 17.5z"/><path d="M12 4c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/><path d="M15.78 11.68A6.95 6.95 0 0012 10.5c-1.42 0-2.73.43-3.78 1.18"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17.5c0 1.38-1.12 2.5-2.5 2.5S2 18.88 2 17.5 3.12 15 4.5 15 7 16.12 7 17.5zM22 17.5c0 1.38-1.12 2.5-2.5 2.5S17 18.88 17 17.5s1.12-2.5 2.5-2.5S22 16.12 22 17.5z"/><path d="M12 4c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/><path d="M15.78 11.68A6.95 6.95 0 0012 10.5c-1.42 0-2.73.43-3.78 1.18"/></svg>
         </div>
-        <h4>Natural & Organic</h4>
+        <h3>Natural & Organic</h3>
         <p>Only non-toxic, organic products touch your pet's skin. We understand that sensitive skin needs gentle, chemical-free care.</p>
       </div>
       <div class="why-card fade-in">
         <div class="why-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <h4>5-Star Experience</h4>
+        <h3>5-Star Experience</h3>
         <p>With 24 five-star reviews and counting, our clients keep coming back. Their dogs drag them in the door, that's how much they love it here.</p>
       </div>
     </div>
@@ -743,7 +748,7 @@ footer{
     </div>
     <div class="review-cta fade-in">
       <p>Love your experience? Leave us a review and get 10% off your next visit!</p>
-      <a href="https://g.page/r/CQ_kn5w8kaP7EBM/review" target="_blank" rel="noopener">Leave a Google Review</a>
+      <a href="https://search.google.com/local/writereview?placeid=ChIJA8LZr3rvtkYRUglU_TyRaPs" target="_blank" rel="noopener">Leave a Google Review</a>
     </div>
   </div>
 </section>
@@ -760,28 +765,28 @@ footer{
       <div class="timeline-step">
         <div class="timeline-dot">1</div>
         <div class="timeline-content">
-          <h4>Call or Walk In</h4>
+          <h3>Call or Walk In</h3>
           <p>Give us a call at (540) 656-0183 or text to schedule. Walk-ins are always welcome for nail trims and quick services.</p>
         </div>
       </div>
       <div class="timeline-step">
         <div class="timeline-dot">2</div>
         <div class="timeline-content">
-          <h4>Meet & Greet</h4>
+          <h3>Meet & Greet</h3>
           <p>We take a moment to meet your pet, discuss their needs, and understand any sensitivities or preferences before we begin.</p>
         </div>
       </div>
       <div class="timeline-step">
         <div class="timeline-dot">3</div>
         <div class="timeline-content">
-          <h4>The Spa Experience</h4>
+          <h3>The Spa Experience</h3>
           <p>Your pet enjoys a gentle, stress-free grooming session with organic products. We work at their pace, never rushing.</p>
         </div>
       </div>
       <div class="timeline-step">
         <div class="timeline-dot">4</div>
         <div class="timeline-content">
-          <h4>Happy Pickup</h4>
+          <h3>Happy Pickup</h3>
           <p>Pick up your freshly groomed, happy pet. We will walk you through what we did and any recommendations for at-home care.</p>
         </div>
       </div>
@@ -816,7 +821,7 @@ footer{
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">Is the hair color safe for pets?</button>
-        <div class="faq-a">Absolutely. We use pet-safe, non-toxic color products specifically formulated for animal fur. The dyes are free of harsh chemicals and are completely safe if licked or ingested in small amounts.</div>
+        <div class="faq-a">Absolutely. We use pet-safe, non-toxic color products specifically formulated for animal fur. The dyes are free of harsh chemicals and are specifically formulated to be pet-safe.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">What are your hours?</button>
@@ -836,7 +841,7 @@ footer{
         <p>We would love to meet your fur baby. Stop by, give us a call, or send a text to schedule your pet's spa day.</p>
         <div class="contact-detail">
           <div class="contact-icon">
-            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
           <div>
             <strong>Address</strong>
@@ -845,7 +850,7 @@ footer{
         </div>
         <div class="contact-detail">
           <div class="contact-icon">
-            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           </div>
           <div>
             <strong>Phone</strong>
@@ -854,7 +859,7 @@ footer{
         </div>
         <div class="contact-detail">
           <div class="contact-icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           </div>
           <div>
             <strong>Hours</strong>
@@ -869,6 +874,8 @@ footer{
   </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 <footer>
   <div class="container">
@@ -882,10 +889,10 @@ footer{
       </ul>
       <div class="footer-social">
         <a href="https://www.facebook.com/livelaughbark/" target="_blank" rel="noopener" aria-label="Facebook">
-          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
         </a>
         <a href="https://www.instagram.com/livelaughbarkblog/" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><path d="M17.5 6.5h.01"/></svg>
         </a>
       </div>
     </div>
@@ -915,17 +922,25 @@ footer{
   ];
   let srcIndex = 0;
 
+  var advancing = false;
   function trySource(){
     if(srcIndex >= sources.length){
       canvas.style.background = 'url(https://images.pexels.com/photos/6816850/pexels-photo-6816850.jpeg?auto=compress&cs=tinysrgb&w=1920) center/cover';
       return;
     }
+    advancing = false;
     video.src = sources[srcIndex];
     video.load();
     video.play().catch(function(){
-      srcIndex++;
-      trySource();
+      advanceSource();
     });
+  }
+
+  function advanceSource(){
+    if(advancing) return;
+    advancing = true;
+    srcIndex++;
+    trySource();
   }
 
   function resizeCanvas(){
@@ -933,25 +948,28 @@ footer{
     canvas.height = window.innerHeight;
   }
 
+  var rafId = null;
   function drawFrame(){
     if(video.readyState >= 2){
-      const vw = video.videoWidth, vh = video.videoHeight;
-      const cw = canvas.width, ch = canvas.height;
-      const scale = Math.max(cw/vw, ch/vh);
-      const sw = vw * scale, sh = vh * scale;
+      var vw = video.videoWidth, vh = video.videoHeight;
+      var cw = canvas.width, ch = canvas.height;
+      var scale = Math.max(cw/vw, ch/vh);
+      var sw = vw * scale, sh = vh * scale;
       ctx.drawImage(video, (cw-sw)/2, (ch-sh)/2, sw, sh);
     }
-    requestAnimationFrame(drawFrame);
+    rafId = requestAnimationFrame(drawFrame);
   }
 
-  video.addEventListener('error', function(){
-    srcIndex++;
-    trySource();
+  document.addEventListener('visibilitychange', function(){
+    if(document.hidden){
+      if(rafId){ cancelAnimationFrame(rafId); rafId = null; }
+    } else {
+      if(!rafId) drawFrame();
+    }
   });
 
-  video.addEventListener('canplay', function(){
-    video.play().catch(function(){});
-  });
+  video.addEventListener('error', function(){ advanceSource(); });
+  video.addEventListener('canplay', function(){ video.play().catch(function(){}); });
 
   window.addEventListener('resize', resizeCanvas);
   resizeCanvas();
@@ -966,15 +984,26 @@ window.addEventListener('scroll', function(){
 
 /* ─── MOBILE MENU ─── */
 function toggleMenu(){
-  document.querySelector('.hamburger').classList.toggle('active');
-  document.getElementById('mobileMenu').classList.toggle('open');
-  document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
+  var btn = document.querySelector('.hamburger');
+  var menu = document.getElementById('mobileMenu');
+  btn.classList.toggle('active');
+  menu.classList.toggle('open');
+  var isOpen = menu.classList.contains('open');
+  btn.setAttribute('aria-expanded', isOpen);
+  document.documentElement.style.overflow = isOpen ? 'hidden' : '';
+  document.body.style.overflow = isOpen ? 'hidden' : '';
 }
 function closeMenu(){
-  document.querySelector('.hamburger').classList.remove('active');
+  var btn = document.querySelector('.hamburger');
+  btn.classList.remove('active');
+  btn.setAttribute('aria-expanded', 'false');
   document.getElementById('mobileMenu').classList.remove('open');
+  document.documentElement.style.overflow = '';
   document.body.style.overflow = '';
 }
+document.getElementById('mobileMenu').addEventListener('click', function(e){
+  if(e.target === this) closeMenu();
+});
 
 /* ─── FAQ TOGGLE ─── */
 function toggleFaq(btn){
