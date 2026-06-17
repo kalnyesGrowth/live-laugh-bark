@@ -285,22 +285,25 @@ nav.scrolled{background:rgba(15,17,20,.95)}
 .process-header{text-align:center;max-width:600px;margin:0 auto 60px}
 .process-header p{color:var(--text-muted);margin-top:12px}
 .timeline{max-width:700px;margin:0 auto;position:relative}
-.timeline::before{
-  content:'';
+.timeline-track{
   position:absolute;
   left:28px;top:0;bottom:0;
   width:2px;
-  background:var(--text-dim);
-  transform-origin:top;
-  transform:scaleY(0);
-  transition:transform 1.2s ease-out;
+  background:rgba(90,90,94,.25);
 }
-.timeline.animated::before{transform:scaleY(1)}
+.timeline-line{
+  position:absolute;
+  left:28px;top:0;
+  width:2px;height:0;
+  background:var(--accent);
+  box-shadow:0 0 8px rgba(126,184,162,.3);
+  z-index:1;
+}
 .timeline-step{
   display:flex;gap:32px;
   margin-bottom:48px;
   opacity:0;transform:translateY(30px);
-  transition:all .6s ease-out;
+  transition:opacity .6s ease-out,transform .6s ease-out;
 }
 .timeline-step.visible{opacity:1;transform:translateY(0)}
 .timeline-dot{
@@ -309,9 +312,34 @@ nav.scrolled{background:rgba(15,17,20,.95)}
   background:var(--bg);
   border:2px solid var(--accent);
   display:flex;align-items:center;justify-content:center;
-  z-index:1;
+  z-index:2;
+  transform:scale(0);
+  transition:transform .5s cubic-bezier(.175,.885,.32,1.275);
 }
+.timeline-step.visible .timeline-dot{transform:scale(1)}
 .timeline-dot svg{width:28px;height:28px;fill:var(--accent)}
+
+/* Walking paw particles */
+.walking-paw{
+  position:absolute;
+  left:19px;
+  width:20px;height:20px;
+  opacity:0;
+  transform:scale(.3) rotate(var(--rot,0deg));
+  pointer-events:none;
+  z-index:1;
+  transition:opacity .35s ease-out,transform .35s ease-out;
+}
+.walking-paw.show{
+  opacity:.35;
+  transform:scale(1) rotate(var(--rot,0deg));
+}
+.walking-paw.fade-out{
+  opacity:0;
+  transform:scale(.2) rotate(var(--rot,0deg));
+  transition:opacity .5s ease-in,transform .5s ease-in;
+}
+.walking-paw svg{width:100%;height:100%;fill:var(--accent)}
 .timeline-content h3{font-size:var(--text-xl);margin-bottom:6px;line-height:1.2}
 .timeline-content p{color:var(--text-muted);font-size:var(--text-sm)}
 
@@ -759,6 +787,8 @@ footer{
       <p>We keep things simple so you and your pet can relax.</p>
     </div>
     <div class="timeline" id="timeline">
+      <div class="timeline-track"></div>
+      <div class="timeline-line" id="timelineLine"></div>
       <div class="timeline-step">
         <div class="timeline-dot"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M226.5 92.9c14.3 42.9-.3 86.2-32.6 96.8s-70.1-15.6-84.4-58.5.3-86.2 32.6-96.8 70.1 15.6 84.4 58.5zM100.4 198.6c18.9 32.4 14.3 70.1-10.2 84.1s-59.7-.9-78.5-33.3S-2.7 179.3 21.8 165.3s59.7.9 78.6 33.3zM69.2 401.2C121.6 259.9 214.7 224 256 224s134.4 35.9 186.8 177.2c3.6 9.7 5.2 20.1 5.2 30.5v1.6c0 25.8-20.9 46.7-46.7 46.7-11.5 0-22.9-1.4-34-4.2l-88-22c-15.3-3.8-31.3-3.8-46.6 0l-88 22c-11.1 2.8-22.5 4.2-34 4.2-25.8 0-46.7-20.9-46.7-46.7v-1.6c0-10.4 1.6-20.8 5.2-30.5zM512 256c0 .9 0 1.8-.1 2.8-.6 18.5-15.2 32.9-32.6 32.2-17.5-.7-31.1-16-30.5-34.4.1-1.6.1-3.2 0-4.8-.7-18.5 13-33.8 30.5-34.5 17.4-.7 32 13.7 32.6 32.2.1.9.1 3.6.1 6.5zM382.9 34.5C413.1 76.8 409.9 125.6 389.7 137.4s-54.7-4.3-84.9-46.6-30.2-91.1-10-102.9 58 4.7 88.1 46.6z"/></svg></div>
         <div class="timeline-content">
@@ -1019,21 +1049,109 @@ var observer = new IntersectionObserver(function(entries){
   });
 }, {threshold:0.15});
 
-document.querySelectorAll('.fade-in, .timeline-step').forEach(function(el){
+document.querySelectorAll('.fade-in').forEach(function(el){
   observer.observe(el);
 });
 
-/* ─── TIMELINE ANIMATION ─── */
-var timelineObs = new IntersectionObserver(function(entries){
-  entries.forEach(function(entry){
-    if(entry.isIntersecting){
-      entry.target.classList.add('animated');
-    }
-  });
-}, {threshold:0.2});
+/* ─── SCROLL-DRIVEN TIMELINE ─── */
+(function(){
+  var tl = document.getElementById('timeline');
+  if(!tl) return;
+  var line = document.getElementById('timelineLine');
+  var steps = tl.querySelectorAll('.timeline-step');
+  var pawSvg = '<svg viewBox="0 0 512 512"><path d="M226.5 92.9c14.3 42.9-.3 86.2-32.6 96.8s-70.1-15.6-84.4-58.5.3-86.2 32.6-96.8 70.1 15.6 84.4 58.5zM100.4 198.6c18.9 32.4 14.3 70.1-10.2 84.1s-59.7-.9-78.5-33.3S-2.7 179.3 21.8 165.3s59.7.9 78.6 33.3zM69.2 401.2C121.6 259.9 214.7 224 256 224s134.4 35.9 186.8 177.2c3.6 9.7 5.2 20.1 5.2 30.5v1.6c0 25.8-20.9 46.7-46.7 46.7-11.5 0-22.9-1.4-34-4.2l-88-22c-15.3-3.8-31.3-3.8-46.6 0l-88 22c-11.1 2.8-22.5 4.2-34 4.2-25.8 0-46.7-20.9-46.7-46.7v-1.6c0-10.4 1.6-20.8 5.2-30.5zM512 256c0 .9 0 1.8-.1 2.8-.6 18.5-15.2 32.9-32.6 32.2-17.5-.7-31.1-16-30.5-34.4.1-1.6.1-3.2 0-4.8-.7-18.5 13-33.8 30.5-34.5 17.4-.7 32 13.7 32.6 32.2.1.9.1 3.6.1 6.5zM382.9 34.5C413.1 76.8 409.9 125.6 389.7 137.4s-54.7-4.3-84.9-46.6-30.2-91.1-10-102.9 58 4.7 88.1 46.6z"/></svg>';
 
-var timeline = document.getElementById('timeline');
-if(timeline) timelineObs.observe(timeline);
+  var paws = [];
+  var lastPawY = 0;
+  var pawSpacing = 35;
+  var pawCount = 0;
+  var fadeStarted = false;
+  var prevProgress = 0;
+
+  function getProgress(){
+    var rect = tl.getBoundingClientRect();
+    var wh = window.innerHeight;
+    var start = rect.top - wh * 0.75;
+    var end = rect.bottom - wh * 0.35;
+    return Math.max(0, Math.min(1, -start / (end - start)));
+  }
+
+  function spawnPaw(y){
+    var el = document.createElement('div');
+    el.className = 'walking-paw';
+    var rot = (pawCount % 2 === 0) ? '-25deg' : '25deg';
+    el.style.top = y + 'px';
+    el.style.setProperty('--rot', rot);
+    el.innerHTML = pawSvg;
+    tl.appendChild(el);
+    paws.push(el);
+    pawCount++;
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){ el.classList.add('show'); });
+    });
+  }
+
+  function fadeOutPaws(){
+    if(fadeStarted) return;
+    fadeStarted = true;
+    paws.forEach(function(p, i){
+      setTimeout(function(){
+        p.classList.remove('show');
+        p.classList.add('fade-out');
+      }, i * 60);
+    });
+    setTimeout(function(){
+      paws.forEach(function(p){ if(p.parentNode) p.parentNode.removeChild(p); });
+      paws = [];
+    }, paws.length * 60 + 600);
+  }
+
+  function resetPaws(){
+    fadeStarted = false;
+    paws.forEach(function(p){ if(p.parentNode) p.parentNode.removeChild(p); });
+    paws = [];
+    pawCount = 0;
+    lastPawY = 0;
+  }
+
+  function update(){
+    var p = getProgress();
+
+    if(p <= 0 && prevProgress > 0){
+      resetPaws();
+      line.style.height = '0px';
+      steps.forEach(function(s){ s.classList.remove('visible'); });
+      prevProgress = p;
+      return;
+    }
+
+    var maxH = tl.scrollHeight;
+    var lineH = p * maxH;
+    line.style.height = lineH + 'px';
+
+    while(lastPawY + pawSpacing < lineH && !fadeStarted){
+      lastPawY += pawSpacing;
+      spawnPaw(lastPawY);
+    }
+
+    steps.forEach(function(step){
+      var dotCenter = step.offsetTop + 28;
+      if(lineH >= dotCenter){
+        step.classList.add('visible');
+      }
+    });
+
+    if(p >= 0.95 && !fadeStarted){
+      fadeOutPaws();
+    }
+
+    prevProgress = p;
+  }
+
+  window.addEventListener('scroll', function(){ requestAnimationFrame(update); }, {passive:true});
+  window.addEventListener('resize', function(){ requestAnimationFrame(update); }, {passive:true});
+  update();
+})();
 
 /* ─── SMOOTH SCROLL ─── */
 document.querySelectorAll('a[href^="#"]').forEach(function(a){
