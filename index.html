@@ -112,6 +112,8 @@ nav.scrolled{background:rgba(15,17,20,.95)}
   display:flex;align-items:center;justify-content:center;
   text-align:center;
   overflow:hidden;
+  background:url('https://images.pexels.com/photos/6816850/pexels-photo-6816850.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover no-repeat;
+  background-color:var(--bg);
 }
 #hero-canvas{
   position:absolute;top:0;left:0;width:100%;height:100%;
@@ -480,6 +482,7 @@ footer{
   .contact-grid{grid-template-columns:1fr}
   .contact-map{min-height:280px}
   .hero-cta{padding:14px 32px;font-size:var(--text-sm)}
+  #hero{background-image:url('https://images.pexels.com/photos/6816850/pexels-photo-6816850.jpeg?auto=compress&cs=tinysrgb&w=800')}
   .footer-inner{flex-direction:column;text-align:center}
   .footer-links{flex-wrap:wrap;justify-content:center}
   #why{background-attachment:scroll}
@@ -932,35 +935,39 @@ footer{
 <script>
 /* ─── CANVAS VIDEO RENDERER ─── */
 (function(){
-  const canvas = document.getElementById('hero-canvas');
-  const ctx = canvas.getContext('2d');
-  const video = document.createElement('video');
+  var canvas = document.getElementById('hero-canvas');
+  var ctx = canvas.getContext('2d');
+  var video = document.createElement('video');
   video.muted = true;
   video.loop = true;
   video.playsInline = true;
-  video.crossOrigin = 'anonymous';
   video.setAttribute('playsinline','');
   video.setAttribute('webkit-playsinline','');
+  video.setAttribute('muted','');
+  video.preload = 'auto';
 
-  const sources = [
+  var isMobile = window.innerWidth <= 768;
+  var sources = [
     'https://videos.pexels.com/video-files/6816883/6816883-hd_1920_1080_30fps.mp4',
     'https://videos.pexels.com/video-files/6131723/6131723-hd_1920_1080_25fps.mp4',
-    'https://videos.pexels.com/video-files/6132700/6132700-hd_1920_1080_25fps.mp4'
+    'https://videos.pexels.com/video-files/6132700/6132700-hd_1920_1080_25fps.mp4',
+    'https://videos.pexels.com/video-files/6816875/6816875-hd_1920_1080_30fps.mp4'
   ];
   let srcIndex = 0;
 
   var advancing = false;
   function trySource(){
     if(srcIndex >= sources.length){
-      canvas.style.background = 'url(https://images.pexels.com/photos/6816850/pexels-photo-6816850.jpeg?auto=compress&cs=tinysrgb&w=1920) center/cover';
+      canvas.style.display = 'none';
       return;
     }
     advancing = false;
     video.src = sources[srcIndex];
     video.load();
-    video.play().catch(function(){
-      advanceSource();
-    });
+    var playAttempt = video.play();
+    if(playAttempt !== undefined){
+      playAttempt.catch(function(){ advanceSource(); });
+    }
   }
 
   function advanceSource(){
@@ -971,8 +978,13 @@ footer{
   }
 
   function resizeCanvas(){
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var maxW = isMobile ? 640 : window.innerWidth;
+    var maxH = isMobile ? 960 : window.innerHeight;
+    canvas.width = maxW;
+    canvas.height = maxH;
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
   }
 
   var rafId = null;
@@ -996,9 +1008,22 @@ footer{
   });
 
   video.addEventListener('error', function(){ advanceSource(); });
-  video.addEventListener('canplay', function(){ video.play().catch(function(){}); });
+  video.addEventListener('canplay', function(){
+    video.play().catch(function(){});
+  });
 
-  window.addEventListener('resize', resizeCanvas);
+  var touchPlayed = false;
+  document.addEventListener('touchstart', function(){
+    if(!touchPlayed && video.paused && video.src){
+      video.play().catch(function(){});
+      touchPlayed = true;
+    }
+  }, {once:true, passive:true});
+
+  window.addEventListener('resize', function(){
+    isMobile = window.innerWidth <= 768;
+    resizeCanvas();
+  });
   resizeCanvas();
   drawFrame();
   trySource();
